@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root{
+    --cor0: rgb(0, 0, 0);
+    --cor1: rgb(235, 233, 233);
+    --cor2: rgb(65, 64, 64);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+ }
+
+body{
+    background-color: var(--cor1);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    height: 100vh;
+    max-width: 1440px;
+}
+
+header{
+    align-items: center;
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+  }
+
+/*responsivo*/
+
+/* se a tela tiver pelo menos 400px, carregará esses estilos */
+@media (min-width: 400px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* breakpoint*/
+@media (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* breakpoint*/
+@media (min-width: 800px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+
+/* ----------MENU---------- */
+
+
+.menu{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0; /* só funciona quando position é declarado*/
+    width: 80%;
+}
+
+.menu li{
+    display: inline-block;
+    list-style: none;
+}
+
+.menu ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+.menu i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.menu a{
+    color: var(--cor2);
+    display: block;
+    padding: 0.5em;
+    position: relative;
+    transition: 0.5s all;
+    text-decoration: none;
+}
+
+.menu li a:before{
+  border-bottom: 3px solid var(--cor2);
+  bottom: 0;
+  content: ' ';
+  position: absolute;
+  transition: 0.6s all;
+  width: 60px;
+}
+
+.menu li a:hover:before{
+  right: 0;
+}
+
+.menu a:hover{
+    text-decoration: none;
+}
+
+
+
+
+/*----------PROJETOS----------*/
+
+.projetos {
+    min-height: 85vh;
+    padding: 1em;
+}
+
+.projetos a{
+    text-decoration: none;
+}
+
+.projetos .grid{
+    display: grid;
+    gap: 2em;
+}
+
+.projetos figcaption{
+  background-color: var(--cor1);
+  border: 2px solid var(--cor2);
+  box-shadow: -5px -3px 0 0 var(--cor0);
+  border-radius: 6px;
+}
+
+.projetos a{
+  color: var(--cor2);
+}
+
+.projetos a:hover{
+  text-decoration: underline;
+}
+
+.projetos figure{
+    text-align: center;
+}
+
+.img-projetos{
+    height: 150px;
+    object-fit: cover;
+    transition: transform 500ms;
+    width: 250px;
+}
+
+.img-projetos:hover{
+    transform: scale(1.5);
+}
+
+/*responsivo*/
+
+@media (min-width: 560px){
+    .projetos .grid{
+    grid-template-columns: 300px 300px;
+    }
+}
+
+@media (min-width: 880px){
+    .projetos .grid{
+    align-content: center;
+    grid-template-columns: repeat(3, 300px);
+    height: calc(100vh - 48px - 4em);
+    justify-content: center;
+    }
+}
+
+@media(min-width: 365px){
+    .projetos figcaption{
+        width: 250px;
+        margin: auto;
+        margin-top: 10px;
+    }
+}
+
+@media(min-width: 800px){
+    .projetos figcaption{
+        width: 300px;
+    }
+}
+
+@media (min-width: 1200px){
+    .img-projetos{
+        height: 10em;
+        width: 300px;
+    }
+}
+
+
+/* ----------HOME BUTTON---------- */
+
+.home a{
+    background-color: var(--cor2);
+    bottom: 0;
+    color: var(--cor1);
+    display: flex;
+    margin: 0.5em;
+    opacity: 70%;
+    padding: 0.5em;
+    position: fixed;
+    right: 0;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  
+  .home a:hover{
+    background-color: var(--cor0);
+    opacity: 100%;
+  }
+
+  /*dark mode*/
+.dark#inicio{
+    background-color:var(--cor0);
+}
+.dark#inicio i{
+    color: var(--cor1);
+}
+.dark#inicio a{
+    color: var(--cor1);
+}
